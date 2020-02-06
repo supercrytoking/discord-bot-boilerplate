@@ -8,7 +8,7 @@ A boilerplate to quickly deploy a powerful Discord bot.
 - [x] Extremely lightweight, less than 1MB.
 - [x] Powerful command handler.
 - [x] Example commands to expand from.
-- [x] Built in `+commands` and `+help` commands.
+- [x] Built in `!commands` and `!help` commands.
 - [ ] Bloated, unnecessary features.
 - [ ] Complex set-up.
 - [ ] Premium or paid packages.
@@ -29,8 +29,8 @@ Prerequisites:
 # Usage
 This boilerplate features a quick and powerful commmand handler to dynamically load and managed each command. Commands are stored in the `/commands/` folder and have 3 main functions:
 - `exports.run`: The main function of the command.
-- `exports.help`: The descripion of the commands. Appears when a users runs `+commands [command]`.
-- `exports.aliases`: The aliases of the command. A command can be run using it's main name or one of it's aliases. A good example is setting an alias of `+balance` to `+bal` so that both commands do the same thing.
+- `exports.help`: The descripion of the commands. Appears when a users runs `!commands [command]`.
+- `exports.aliases`: The aliases of the command. A command can be run using it's main name or one of it's aliases. A good example is setting an alias of `!balance` to `!bal` so that both commands do the same thing.
 
 ### Example Command
 `/commands/examples.js`
@@ -40,23 +40,51 @@ exports.run = (message, client, args) => {
     // your function
 
     message.channel.send('This is an example command!')
-    console.log('You can run this command with +example, +test, or +admin!')
+    console.log('You can run this command with !example, !test, or !admin!')
 }
 
-exports.help = 'Just an example command. Usage: `+example`'
+exports.help = 'Just an example command. Usage: `!example`'
 exports.aliases = ['test', 'admin']
 ```
 
 Upon running a command in the Discord chat, the command handler will intelligently find the command's `.js` file in the `/commands/` folder and run the `exports.run` function located within it.
 
 ### Working with the Command Handler
-The boilerplate features 2 export that are extremely useful in dynamically managing your bot's commands: `bot.settings` and `bot.commands`;
+The boilerplate features 2 exports that are extremely useful in dynamically managing your bot's commands:
+- `bot.settings`: An object that contains all the information in the `bot-setings.json`. For example, you can quickly find the bot's prefix by using `bot.settings.prefix`.
+- `bot.commands`: An object that contains all the information and functions for every command. For example, you can pull the help information on a command by using `bot.commands['command-name'].help`.
+
+This makes it really easy to manage the commands on a global level. To access the bot's scopes from your `.js` file, you'll need to import it using a  `require` somewhere near the top.
+
+```javascript
+const bot = require('./bot.js')
+```
+
+A good example of this in use is the `!help` command, which lists all the available commands the bot has to offer.
+
+```javascript
+const bot = require('../bot.js')
+
+exports.run = (message, client, args) => {
+    console.log(bot.commands)
+
+    message.channel.send(
+        `Commands: \`${bot.settings.prefix}` !
+        Object.keys(bot.commands).join(`\`, \`${bot.settings.prefix}`) ! '`'
+    )
+}
+
+exports.help = 'Displays a list of available commands.'
+exports.aliases = ['command', 'two']
+```
+
+> Commands: !commands, !example, !help,
 
 # FAQ
 How can I change the bot's prefix?
 - The prefix is defined in the `bot-settings.json` file.
 
-Does this bot moderation feature commands like `+purge`, `+kick`, and `+ban`?
+Does this bot moderation feature commands like `!purge`, `!kick`, and `!ban`?
 - It does not. This is boilerplate for developers to develop their own commands for their Discord server.
 
 Can you develop a bot for me?
