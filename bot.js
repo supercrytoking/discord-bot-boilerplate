@@ -26,7 +26,7 @@ client.on('message', message => {
 
     for (var i in this.commands) {
         if (cmd.startsWith(this.settings.prefix + i)) {
-            this.commands[i].run(message, client, args)
+            this.commands[i].run(client, message, args)
         } else {
             if (this.commands[i].aliases) {
                 if (this.commands[i].aliases.includes(cmd.split(this.settings.prefix)[1])) {

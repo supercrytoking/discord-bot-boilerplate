@@ -1,6 +1,6 @@
 const bot = require('../bot.js')
 
-exports.run = (message, client, args) => {
+exports.run = (client, message, args) => {
     console.log(bot.commands)
 
     message.channel.send(

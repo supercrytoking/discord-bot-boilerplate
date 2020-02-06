@@ -35,7 +35,7 @@ This boilerplate features a quick and powerful commmand handler to dynamically l
 ### Example Command
 `/commands/examples.js`
 ```javascript
-exports.run = (message, client, args) => {
+exports.run = (client, message, args) => {
 
     // your function
 
@@ -65,7 +65,7 @@ A good example of this in use is the `!help` command, which lists all the availa
 ```javascript
 const bot = require('../bot.js')
 
-exports.run = (message, client, args) => {
+exports.run = (client, message, args) => {
     console.log(bot.commands)
 
     message.channel.send(
