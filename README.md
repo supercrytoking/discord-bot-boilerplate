@@ -32,7 +32,7 @@ This boilerplate features a quick and powerful commmand handler to dynamically l
 - `exports.help`: The descripion of the commands. Appears when a users runs `+commands [command]`.
 - `exports.aliases`: The aliases of the command. A command can be run using it's main name or one of it's aliases. A good example is setting an alias of `+balance` to `+bal` so that both commands do the same thing.
 
-## Example Command
+### Example Command
 `/commands/examples.js`
 ```javascript
 exports.run = (message, client, args) => {
@@ -47,7 +47,10 @@ exports.help = 'Just an example command. Usage: `+example`'
 exports.aliases = ['test', 'admin']
 ```
 
-Upon running a command in the Discord chat, the command handler will intelligently find the command and run the command within the `exports.run` function.
+Upon running a command in the Discord chat, the command handler will intelligently find the command's `.js` file in the `/commands/` folder and run the `exports.run` function located within it.
+
+### Working with the Command Handler
+The boilerplate features 2 export that are extremely useful in dynamically managing your bot's commands: `bot.settings` and `bot.commands`;
 
 # FAQ
 How can I change the bot's prefix?
