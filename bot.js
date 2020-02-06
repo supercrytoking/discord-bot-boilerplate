@@ -30,7 +30,7 @@ client.on('message', message => {
         } else {
             if (this.commands[i].aliases) {
                 if (this.commands[i].aliases.includes(cmd.split(this.settings.prefix)[1])) {
-                    this.commands[i].run(message, client, args)
+                    this.commands[i].run(client, message, args)
                 }
             }
         }

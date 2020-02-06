@@ -32,6 +32,21 @@ This boilerplate features a quick and powerful commmand handler to dynamically l
 - `exports.help`: The descripion of the commands. Appears when a users runs `+commands [command]`.
 - `exports.aliases`: The aliases of the command. A command can be run using it's main name or one of it's aliases. A good example is setting an alias of `+balance` to `+bal` so that both commands do the same thing.
 
+## Example Command
+`/commands/examples.js`
+```
+exports.run = (message, client, args) => {
+
+    // your function
+
+    console.log('This is an example command! You can run this command with +example, +test, or +admin!')
+    message.channel.send('This is an example command!')
+}
+
+exports.help = 'Just an example command. Usage: `+exmaple`'
+exports.aliases = ['test', 'admin']
+```
+
 # FAQ
 How can I change the bot's prefix?
 - The prefix is defined in the `bot-settings.json` file.
