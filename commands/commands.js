@@ -10,4 +10,4 @@ exports.run = (client, message, args) => {
 }
 
 exports.help = 'Displays a list of available commands.'
-exports.aliases = ['command', 'two']
+exports.aliases = ['commandlist', 'command']

@@ -69,13 +69,13 @@ exports.run = (client, message, args) => {
     console.log(bot.commands)
 
     message.channel.send(
-        `Commands: \`${bot.settings.prefix}` !
-        Object.keys(bot.commands).join(`\`, \`${bot.settings.prefix}`) ! '`'
+        `Commands: \`${bot.settings.prefix}` +
+        Object.keys(bot.commands).join(`\`, \`${bot.settings.prefix}`) + '`'
     )
 }
 
 exports.help = 'Displays a list of available commands.'
-exports.aliases = ['command', 'two']
+exports.aliases = ['commandlist', 'command']
 ```
 
 > Commands: !commands, !example, !help,
