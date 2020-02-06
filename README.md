@@ -39,8 +39,8 @@ exports.run = (message, client, args) => {
 
     // your function
 
-    console.log('This is an example command! You can run this command with +example, +test, or +admin!')
     message.channel.send('This is an example command!')
+    console.log('You can run this command with +example, +test, or +admin!')
 }
 
 exports.help = 'Just an example command. Usage: `+exmaple`'
