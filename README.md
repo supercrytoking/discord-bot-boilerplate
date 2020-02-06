@@ -9,7 +9,6 @@ A boilerplate to quickly deploy a powerful Discord bot.
 - [x] Powerful command handler.
 - [x] Example commands to expand from.
 - [x] Built in `+commands` and `+help` commands.
-
 - [ ] Bloated, unnecessary features.
 - [ ] Complex set-up.
 - [ ] Premium or paid packages.
