@@ -5,7 +5,7 @@ const fs = require('fs')
 // Load all settings from bot-settings.json into the public settings object.
 exports.settings = require('./bot-settings.json')
 
-// Load all commands into the public commands object.
+// Load all commands into the public commands object from the /commands/ folder.
 exports.commands = {}
 fs.readdir('./commands', (err, files) => {
     files.forEach(file => {
@@ -20,8 +20,7 @@ client.on('ready', () => {
     console.log(`Commands loaded: ${this.settings.prefix}${Object.keys(this.commands).join(`, ${this.settings.prefix}`)}`)
 })
 
-
-// Command handler...
+// Handle commands.
 client.on('message', message => {
     if (!message.content.startsWith(this.settings.prefix)) return
 

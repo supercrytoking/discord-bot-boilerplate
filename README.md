@@ -86,7 +86,7 @@ How can I change the bot's prefix?
 - The prefix is defined in the `bot-settings.json` file.
 
 Does this bot moderation feature commands like `!purge`, `!kick`, and `!ban`?
-- It does not. This is boilerplate for developers to develop their own commands for their Discord server.
+- It does not. This is boilerplate for developers to develop their own commands for their Discord server—not quite a moderation/utility bot.
 
 Can you develop a bot for me?
 - I'd love to! Reach out to me if you'd like to hire me.
