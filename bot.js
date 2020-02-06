@@ -2,9 +2,10 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 const fs = require('fs')
 
+// Load all settings from bot-settings.json into the public settings object.
 exports.settings = require('./bot-settings.json')
 
-// Load all commands in public commands object.
+// Load all commands into the public commands object.
 exports.commands = {}
 fs.readdir('./commands', (err, files) => {
     files.forEach(file => {
@@ -13,11 +14,14 @@ fs.readdir('./commands', (err, files) => {
     })
 })
 
+// Annouce to the console when the bot is ready.
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
     console.log(`Commands loaded: ${this.settings.prefix}${Object.keys(this.commands).join(`, ${this.settings.prefix}`)}`)
 })
 
+
+// Command handler...
 client.on('message', message => {
     if (!message.content.startsWith(this.settings.prefix)) return
 
@@ -37,4 +41,5 @@ client.on('message', message => {
     }
 })
 
+// Initiate the connection with Discord using the token located in the public settings object.
 client.login(this.settings.token)

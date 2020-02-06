@@ -6,6 +6,7 @@ A boilerplate to quickly deploy a powerful Discord bot.
 - [x] Fully customizable, host on your own server!
 - [x] Quick deployment: Get the bot online in > 1 minute.
 - [x] Extremely lightweight, less than 1MB.
+- [x] Fully commented: Easy for a new developer to understand and navigate.
 - [x] Powerful command handler.
 - [x] Example commands to expand from.
 - [x] Built in `!commands` and `!help` commands.
@@ -23,7 +24,7 @@ Prerequisites:
 1. Download/clone the repo.
 2. Place your Discord bot's token in `bot-settings.json`.
 3. Open a Terminal (Console) window, and navigate to your project by using `cd /path/to/this/repo`.
-4. Run `npm i` to download the dependancies (only [discord.js](https://discord.js.org)!).
+4. Run `npm i` to download the dependencies.
 5. Run `node bot.js` to initiate the bot.
 
 # Usage
