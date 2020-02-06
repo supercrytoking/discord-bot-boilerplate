@@ -23,5 +23,18 @@ Prerequisites:
 1. Download/clone the repo.
 2. Insert your Discord bot token in `bot-settings.json`.
 3. Open a Terminal window, and navigate to your project by using `cd /path/to/this/repo`.
-4. Run `npm i` to download the dependancies (only `discord.js`!).
+4. Run `npm i` to download the dependancies (only [discord.js](https://discord.js.org)!).
 5. Run `node bot.js` to initiate the bot.
+
+# Usage
+This boilerplate features a quick and powerful commmand handler to dynamically load and managed each command. Commands are stored in the `/commands/` folder and have 3 main functions:
+- `exports.run`: The main function of the command.
+- `exports.help`: The descripion of the commands. Appears when a users runs `+commands [command]`.
+- `exports.aliases`: The aliases of the command. A command can be run using it's main name or one of it's aliases. A good example is setting an alias of `+balance` to `+bal` so that both commands do the same thing.
+
+# FAQ
+How can I change the bot's prefix?
+- The prefix is defined in the `bot-settings.json` file.
+
+Can you develop a bot for me?
+- I'd love to! Reach out to me if you'd like to hire me.
