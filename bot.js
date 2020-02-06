@@ -33,10 +33,12 @@ client.on('message', message => {
     for (var i in client.commands) {
         if (cmd.startsWith(client.settings.prefix + i)) {
             client.commands[i].run(client, message, args)
+            break
         } else {
             if (client.commands[i].aliases) {
                 if (client.commands[i].aliases.includes(cmd.split(client.settings.prefix)[1])) {
                     client.commands[i].run(client, message, args)
+                    break
                 }
             }
         }
