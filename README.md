@@ -3,7 +3,7 @@ A boilerplate to quickly deploy a powerful Discord bot.
 
 # Features
 - [x] 100% free and open source.
-- [x] Fully customizabled, host on your own server!
+- [x] Fully customizable, host on your own server!
 - [x] Quick deployment: Get the bot online in > 1 minute.
 - [x] Extremely lightweight, less than 1MB.
 - [x] Powerful command handler.
