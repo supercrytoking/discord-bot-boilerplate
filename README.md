@@ -22,10 +22,11 @@ Prerequisites:
 - A brain.
 
 1. Download/clone the repo.
-2. Place your Discord bot's token in `bot-settings.json`.
-3. Open a Terminal (Console) window, and navigate to your project by using `cd /path/to/this/repo`.
-4. Run `npm i` to download the dependencies.
-5. Run `node bot.js` to initiate the bot.
+2. Duplicate `/config/bot-settings.sample.json` and rename it `bot-settings.json`.
+3. Place your Discord bot's token in `bot-settings.json`.
+4. Open a Terminal (Console) window, and navigate to your project by using `cd /path/to/this/repo`.
+5. Run `npm i` to download the dependencies.
+6. Run `node bot.js` to initiate the bot.
 
 # Usage
 This boilerplate features a quick and powerful commmand handler to dynamically load and managed each command. Commands are stored in the `/commands/` folder and have 3 main functions:
