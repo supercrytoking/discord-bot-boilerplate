@@ -1,5 +1,5 @@
 # Discord Bot Boilerplate
-A boilerplate to quickly deploy a powerful Discord bot.
+A boilerplate to quickly deploy a powerful Discord bot. Quickly and painlessly deploy a powerful, lightweight and extremely easy-to-manage Discord bot for both beginners and expert users. No experiece needed.
 
 # Features
 - [x] 100% free and open source.
@@ -10,7 +10,7 @@ A boilerplate to quickly deploy a powerful Discord bot.
 - [x] Powerful command handler.
 - [x] Example commands to expand from.
 - [x] Built in `!commands` and `!help` commands.
-- [ ] Bloated, unnecessary features.
+- [ ] Bloated, unnecessary, complex, or downright annoying features.
 - [ ] Complex set-up.
 - [ ] Premium or paid packages.
 
@@ -78,8 +78,7 @@ exports.run = (client, message, args) => {
 exports.help = 'Displays a list of available commands.'
 exports.aliases = ['commandlist', 'command']
 ```
-
-> Commands: !commands, !example, !help,
+> Commands: !commands, !example, !help
 
 # FAQ
 How can I change the bot's prefix?
@@ -87,6 +86,9 @@ How can I change the bot's prefix?
 
 Does this bot moderation feature commands like `!purge`, `!kick`, and `!ban`?
 - It does not. This is boilerplate for developers to develop their own commands for their Discord server—not quite a moderation/utility bot.
+
+How can I host my bot when I'm away from my machine, 24/7?
+- For that, you'll need to run the program on a remote machine. You'll need a VPS of your own. [You can get a VPS for less than $10/month on https://bugplay.com!](https://bugplay.com)
 
 Can you develop a bot for me?
 - I'd love to! Reach out to me if you'd like to hire me.
