@@ -34,7 +34,7 @@ This boilerplate features a quick and powerful commmand handler to dynamically l
 
 ## Example Command
 `/commands/examples.js`
-```
+```javascript
 exports.run = (message, client, args) => {
 
     // your function
