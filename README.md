@@ -90,5 +90,8 @@ Does this bot moderation feature commands like `!purge`, `!kick`, and `!ban`?
 How can I host my bot when I'm away from my machine, 24/7?
 - For that, you'll need to run the program on a remote machine. You'll need a VPS of your own. [You can get a VPS for less than $10/month on https://bugplay.com!](https://bugplay.com)
 
+<!-- Why do you provide this for free?
+- Because I enjoy it! -->
+
 Can you develop a bot for me?
 - I'd love to! Reach out to me if you'd like to hire me.
