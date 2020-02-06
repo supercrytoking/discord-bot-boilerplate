@@ -91,7 +91,7 @@ exports.aliases = ['commandlist', 'command']
 - For that, you'll need to run the program on a remote machine. You'll need a VPS of your own. [You can get a VPS for less than $10/month on https://bugplay.com!](https://bugplay.com)
 
 **Where can I donate?**
-You can support [UNDERFORUMS on Patreon](https://www.patreon.com/underforums) or send tips to my Bitcoin address (`...`)!
+- You can support [UNDERFORUMS on Patreon](https://www.patreon.com/underforums), send tips to my Bitcoin address (`3HFuhH4enDUKFqokiron6jyMSzPVwNHkTW`), or send me [XLM on Keybase (@youngseebi)](https://keybase.io/youngseebi)!
 
 **Can you develop a bot for me?**
 - I'd love to! Reach out to me if you'd like to hire me.

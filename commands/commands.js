@@ -1,11 +1,9 @@
-const bot = require('../bot.js')
-
 exports.run = (client, message, args) => {
-    console.log(bot.commands)
+    console.log(client.commands)
 
     message.channel.send(
-        `Commands: \`${bot.settings.prefix}` +
-        Object.keys(bot.commands).join(`\`, \`${bot.settings.prefix}`) + '`'
+        `Commands: \`${client.settings.prefix}` +
+        Object.keys(client.commands).join(`\`, \`${client.settings.prefix}`) + '`'
     )
 }
 

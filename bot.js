@@ -1,39 +1,42 @@
 const Discord = require('discord.js')
-const client = new Discord.Client()
 const fs = require('fs')
 
+// Create + export the Discord.Client() instance so it's accessible in all files.
+const client = new Discord.Client()
+exports.client = client
+
 // Load all settings from bot-settings.json into the public settings object.
-exports.settings = require('./bot-settings.json')
+client.settings = require('./config/bot-settings.json')
 
 // Load all commands into the public commands object from the /commands/ folder.
-exports.commands = {}
+client.commands = {}
 fs.readdir('./commands', (err, files) => {
     files.forEach(file => {
         var prop = require(`./commands/${file}`)
-        this.commands[file.split('.')[0]] = prop
+        client.commands[file.split('.')[0]] = prop
     })
 })
 
 // Annouce to the console when the bot is ready.
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
-    console.log(`Commands loaded: ${this.settings.prefix}${Object.keys(this.commands).join(`, ${this.settings.prefix}`)}`)
+    console.log(`Commands loaded: ${client.settings.prefix}${Object.keys(client.commands).join(`, ${client.settings.prefix}`)}`)
 })
 
 // Handle commands.
 client.on('message', message => {
-    if (!message.content.startsWith(this.settings.prefix)) return
+    if (!message.content.startsWith(client.settings.prefix)) return
 
     var cmd = message.content.toLowerCase().trim()
     var args = cmd.split(' ')
 
-    for (var i in this.commands) {
-        if (cmd.startsWith(this.settings.prefix + i)) {
-            this.commands[i].run(client, message, args)
+    for (var i in client.commands) {
+        if (cmd.startsWith(client.settings.prefix + i)) {
+            client.commands[i].run(client, message, args)
         } else {
-            if (this.commands[i].aliases) {
-                if (this.commands[i].aliases.includes(cmd.split(this.settings.prefix)[1])) {
-                    this.commands[i].run(client, message, args)
+            if (client.commands[i].aliases) {
+                if (client.commands[i].aliases.includes(cmd.split(client.settings.prefix)[1])) {
+                    client.commands[i].run(client, message, args)
                 }
             }
         }
@@ -41,4 +44,4 @@ client.on('message', message => {
 })
 
 // Initiate the connection with Discord using the token located in the public settings object.
-client.login(this.settings.token)
+client.login(client.settings.token)
