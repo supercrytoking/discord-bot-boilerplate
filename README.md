@@ -62,17 +62,15 @@ This makes it really easy to manage the commands on a global level. To access th
 const bot = require('./bot.js')
 ```
 
-A good example of this in use is the `!help` command, which lists all the available commands the bot has to offer.
+A good example of this in use is the `!commands` command, which lists all the available commands the bot has loaded.
 
 ```javascript
-const bot = require('../bot.js')
-
 exports.run = (client, message, args) => {
-    console.log(bot.commands)
+    console.log(client.commands)
 
     message.channel.send(
-        `Commands: \`${bot.settings.prefix}` +
-        Object.keys(bot.commands).join(`\`, \`${bot.settings.prefix}`) + '`'
+        `Commands: \`${client.settings.prefix}` +
+        Object.keys(client.commands).join(`\`, \`${client.settings.prefix}`) + '`'
     )
 }
 
