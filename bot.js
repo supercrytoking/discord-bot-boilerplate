@@ -10,12 +10,17 @@ client.settings = require('./config/bot-settings.json')
 
 // Load all commands into the public commands object from the /commands/ folder.
 client.commands = {}
-fs.readdir('./commands', (err, files) => {
-    files.forEach(file => {
-        var prop = require(`./commands/${file}`)
-        client.commands[file.split('.')[0]] = prop
+
+    fs.readdir('./commands', (err, files) => {
+        try {
+            files.forEach(file => {
+                var prop = require(`./commands/${file}`)
+                client.commands[file.split('.')[0]] = prop
+            })
+        } catch (err) {
+            console.log(err)
+        }
     })
-})
 
 // Annouce to the console when the bot is ready.
 client.on('ready', () => {
@@ -30,20 +35,29 @@ client.on('message', message => {
     var cmd = message.content.toLowerCase().trim()
     var args = cmd.split(' ')
 
-    for (var i in client.commands) {
-        if (cmd.startsWith(client.settings.prefix + i)) {
-            client.commands[i].run(client, message, args)
-            break
-        } else {
-            if (client.commands[i].aliases) {
-                if (client.commands[i].aliases.includes(cmd.split(client.settings.prefix)[1])) {
-                    client.commands[i].run(client, message, args)
-                    break
+    try {
+        for (var i in client.commands) {
+            if (cmd.startsWith(client.settings.prefix + i)) {
+                client.commands[i].run(client, message, args)
+                break
+            } else {
+                if (client.commands[i].aliases) {
+                    if (client.commands[i].aliases.includes(cmd.split(client.settings.prefix)[1])) {
+                        client.commands[i].run(client, message, args)
+                        break
+                    }
                 }
             }
         }
+    } catch (err) {
+        console.log(err)
     }
 })
 
 // Initiate the connection with Discord using the token located in the public settings object.
 client.login(client.settings.token)
+
+// Handle Discord errors.
+client.on('error', (err) => console.error(err))
+client.on('warn', (err) => console.warn(err))
+// client.on('debug', (err) => console.info(err))

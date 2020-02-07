@@ -1,5 +1,5 @@
 # Discord Bot Boilerplate
-A boilerplate to quickly deploy a powerful Discord bots. Quickly and painlessly deploy a powerful, lightweight and extremely easy-to-manage Discord bot for both beginners and expert users. No experiece needed.
+A boilerplate to quickly deploy a powerful Discord bots. Quickly and painlessly deploy a powerful, lightweight and extremely easy-to-manage Discord bot for both beginners and expert users. No experience needed.
 
 # Features
 - [x] 100% free and open source.
@@ -29,7 +29,7 @@ Prerequisites:
 6. Run `node bot.js` to initiate the bot.
 
 # Usage
-This boilerplate features a quick and powerful commmand handler to dynamically load and managed each command. Commands are stored in the `/commands/` folder and have 3 main functions:
+This boilerplate features a quick and powerful commmand handler to dynamically load and manage each command. Commands are stored in the `/commands/` folder and have 3 main functions:
 - `exports.run`: The main function of the command.
 - `exports.help`: The descripion of the commands. Appears when a users runs `!commands [command]`.
 - `exports.aliases`: The aliases of the command. A command can be run using it's main name or one of it's aliases. A good example is setting an alias of `!balance` to `!bal` so that both commands do the same thing.
@@ -53,13 +53,13 @@ Upon running a command in the Discord chat, the command handler will intelligent
 
 ### Working with the Command Handler
 The boilerplate features 2 exports that are extremely useful in dynamically managing your bot's commands:
-- `bot.settings`: An object that contains all the information in the `bot-setings.json`. For example, you can quickly find the bot's prefix by using `bot.settings.prefix`.
-- `bot.commands`: An object that contains all the information and functions for every command. For example, you can pull the help information on a command by using `bot.commands['command-name'].help`.
+- `client.settings`: An object that contains all the information in the `bot-setings.json`. For example, you can quickly find the bot's prefix by using `bot.settings.prefix`.
+- `client.commands`: An object that contains all the information and functions for every command. For example, you can pull the help information on a command by using `bot.commands['command-name'].help`.
 
-This makes it really easy to manage the commands on a global level. To access the bot's scopes from your `.js` file, you'll need to import it using a  `require` somewhere near the top.
+This makes it really easy to manage the commands on a global level. To access the bot's scopes from your `.js` file on a global scale, you'll need to import it using a  `require` somewhere near the top.
 
 ```javascript
-const bot = require('./bot.js')
+const client = require('./client.js')
 ```
 
 A good example of this in use is the `!commands` command, which lists all the available commands the bot has loaded.
