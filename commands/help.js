@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
     if (!searched) {
         message.channel.send(`Use \`${client.settings.prefix}commands\` to view a list of commands. Use \`${client.settings.prefix}help [command]\` to view more information on a specific command.`)
         return
-    }bot
+    }
 
     // If the search contains the prefix...
     if (searched.includes(client.settings.prefix)) {
