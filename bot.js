@@ -10,7 +10,6 @@ client.settings = require('./config/bot-settings.json')
 
 // Load all commands into the public commands object from the /commands/ folder.
 client.commands = {}
-            })
 fs.readdir('./commands', (err, files) => {
     try {
         files.forEach(file => {
