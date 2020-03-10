@@ -22,7 +22,7 @@ client.commands = {}
         }
     })
 
-// Annouce to the console when the bot is ready.
+// Announce to the console when the bot is ready.
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
     console.log(`Commands loaded: ${client.settings.prefix}${Object.keys(client.commands).join(`, ${client.settings.prefix}`)}`)
