@@ -10,7 +10,7 @@ module.exports = (client, message) => {
                 break
             } else {
                 if (client.commands[i].aliases) {
-                    if (client.commands[i].aliases.includes(cmd.split(client.settings.prefix)[1])) {
+                    if (client.commands[i].aliases.includes(cmd.split(' ')[0](client.settings.prefix)[1])) {
                         client.commands[i].run(client, message, args)
                         break
                     }
