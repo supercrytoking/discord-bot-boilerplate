@@ -29,7 +29,7 @@ fs.readdir('./events', (err, files) => {
             var prop = require(`./events/${file}`)
 
             client.events[eventName] = prop
-            client.on(eventName, prop.bind(null, client))var
+            client.on(eventName, prop.bind(null, client))
         })
     } catch (err) {
         console.log(err)
@@ -45,4 +45,4 @@ client.on('warn', (err) => console.warn(err))
 // client.on('debug', (err) => console.info(err))
 
 // Catch and report UnhandledPromiseRejectionWarnings.
-process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error))var
+process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error))
