@@ -1,5 +1,7 @@
 module.exports = (client, message) => {
+    if (message.author.bot) return
     if (!message.content.startsWith(client.settings.prefix)) return
+    
     var cmd = message.content.toLowerCase().trim()
     var args = cmd.split(' ')
 

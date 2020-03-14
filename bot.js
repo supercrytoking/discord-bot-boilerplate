@@ -1,14 +1,13 @@
 const Discord = require('discord.js')
 const fs = require('fs')
 
-// Create + export the Discord.Client() instance so it's accessible in all files.
+// Create a Discord.Client() instance.
 const client = new Discord.Client()
-exports.client = client
 
-// Load all settings from bot-settings.json into the public settings object.
+// Load all settings from bot-settings.json into the client's settings object.
 client.settings = require('./config/bot-settings.json')
 
-// Load all commands into the public commands object from the /commands/ folder.
+// Load all commands into the client's commands object from the /commands/ folder.
 client.commands = {}
 fs.readdir('./commands', (err, files) => {
     try {
@@ -21,6 +20,7 @@ fs.readdir('./commands', (err, files) => {
     }
 })
 
+// Load all commands into the client's events object from the /events/ folder.
 client.events = {}
 fs.readdir('./events', (err, files) => {
     try {
@@ -36,10 +36,10 @@ fs.readdir('./events', (err, files) => {
     }
 })
 
-// Initiate the connection with Discord using the token located in the public settings object.
+// Initiate the connection with Discord using the token located in the client's settings object.
 client.login(client.settings.token)
 
-// Handle Discord errors.
+// Events fired when Discord has an error.
 client.on('error', (err) => console.error(err))
 client.on('warn', (err) => console.warn(err))
 // client.on('debug', (err) => console.info(err))
