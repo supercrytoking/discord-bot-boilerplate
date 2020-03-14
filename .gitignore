@@ -1,6 +1,7 @@
 # Custom
 .DS_Store
 config/bot-settings.json
+package-lock.json
 
 # Logs
 logs
