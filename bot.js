@@ -29,7 +29,7 @@ fs.readdir('./events', (err, files) => {
             var prop = require(`./events/${file}`)
 
             client.events[eventName] = prop
-            client.on(eventName, prop.bind(null, client));
+            client.on(eventName, prop.bind(null, client))var
         })
     } catch (err) {
         console.log(err)
@@ -39,7 +39,10 @@ fs.readdir('./events', (err, files) => {
 // Initiate the connection with Discord using the token located in the client's settings object.
 client.login(client.settings.token)
 
-// Events fired when Discord has an error.
+// Catch and report discord.js errors.
 client.on('error', (err) => console.error(err))
 client.on('warn', (err) => console.warn(err))
 // client.on('debug', (err) => console.info(err))
+
+// Catch and report UnhandledPromiseRejectionWarnings.
+process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error))var
