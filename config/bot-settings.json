@@ -1,0 +1,10 @@
+{
+    "token": "NjUxOTk0NjI3MDU3OTA5NzYw.XfwnxA.iSpvhjzfpRy5AvU5FEMFvuplG8w",
+    "prefix": "!",
+    "database": {
+        "host": "localhost",
+        "user": "discord-underbot",
+        "password": "ZwHCoiMpyh3IWLAT",
+        "database": "discord-underbot"
+    }
+}
