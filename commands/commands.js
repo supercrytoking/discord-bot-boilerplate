@@ -2,8 +2,8 @@ exports.run = (client, message, args) => {
     console.log(client.commands)
 
     message.channel.send(
-        `Commands: \`${client.settings.prefix}` +
-        Object.keys(client.commands).join(`\`, \`${client.settings.prefix}`) + '`'
+        `Commands: \`${process.env.BOT_PREFIX}` +
+        Object.keys(client.commands).join(`\`, \`${process.env.BOT_PREFIX}`) + '`'
     )
 }
 

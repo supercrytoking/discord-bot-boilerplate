@@ -3,19 +3,19 @@ exports.run = (client, message, args) => {
 
     // If nothing is searched...
     if (!searched) {
-        message.channel.send(`Use \`${client.settings.prefix}commands\` to view a list of commands. Use \`${client.settings.prefix}help [command]\` to view more information on a specific command.`)
+        message.channel.send(`Use \`${process.env.BOT_PREFIX}commands\` to view a list of commands. Use \`${process.env.BOT_PREFIX}help [command]\` to view more information on a specific command.`)
         return
     }
 
     // If the search contains the prefix...
-    if (searched.includes(client.settings.prefix)) {
+    if (searched.includes(process.env.BOT_PREFIX)) {
         console.log('has prefix')
-        searched = searched.split(client.settings.prefix)[1]
+        searched = searched.split(process.env.BOT_PREFIX)[1]
     }
 
     // If the command doesn't exist...
     if (!Object.keys(client.commands).includes(searched.toLowerCase())) {
-        message.channel.send(`Sorry, but I don't think that command exists. Use \`${client.settings.prefix}commands\` for a list of commands.`)
+        message.channel.send(`Sorry, but I don't think that command exists. Use \`${process.env.BOT_PREFIX}commands\` for a list of commands.`)
         return
     }
 
@@ -26,7 +26,7 @@ exports.run = (client, message, args) => {
     }
 
     message.channel.send(client.commands[searched].help)
-    // message.channel.send(`\`${client.settings.prefix}${searched}\` — ${client.commands[searched].help}`)
+    // message.channel.send(`\`${process.env.BOT_PREFIX}${searched}\` — ${client.commands[searched].help}`)
 }
 
 exports.help = 'Displays more information on a specific command.'
