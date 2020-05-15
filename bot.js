@@ -42,3 +42,5 @@ client.on('warn', (err) => console.warn(err))
 // client.on('debug', (err) => console.info(err))
 
 process.on('unhandledRejection', error => console.error('Uncaught Promise Rejection', error))
+
+// :)
