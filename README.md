@@ -22,8 +22,8 @@ Prerequisites:
 - A brain.
 
 1. Download/clone the repo.
-2. Duplicate `/config/bot-settings.sample.json` and rename it `bot-settings.json`.
-3. Place your Discord bot's token in `bot-settings.json`.
+2. Duplicate `.env.sample` and rename it `.env`.
+3. Place your Discord bot's token in `.env`.
 4. Open a Terminal (Console) window, and navigate to your project by using `cd /path/to/this/repo`.
 5. Run `npm i` to download the dependencies.
 6. Run `node bot.js` to initiate the bot.
@@ -69,8 +69,8 @@ exports.run = (client, message, args) => {
     console.log(client.commands)
 
     message.channel.send(
-        `Commands: \`${client.settings.prefix}` +
-        Object.keys(client.commands).join(`\`, \`${client.settings.prefix}`) + '`'
+        `Commands: \`${process.env.BOT_PREFIX}` +
+        Object.keys(client.commands).join(`\`, \`${process.env.BOT_PREFIX}`) + '`'
     )
 }
 
@@ -81,7 +81,7 @@ exports.aliases = ['commandlist', 'command']
 
 # FAQ
 **How can I change the bot's prefix?**
-- The prefix is defined in the `bot-settings.json` file.
+- The prefix is defined in the `.env` file.
 
 **Does this bot moderation feature commands like `!purge`, `!kick`, and `!ban`?**
 - It does not. This is boilerplate for developers to develop their own commands for their Discord server—not quite a moderation/utility bot.

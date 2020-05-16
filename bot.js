@@ -1,3 +1,4 @@
+require('dotenv').config()
 const Discord = require('discord.js')
 const fs = require('fs')
 
@@ -37,7 +38,7 @@ fs.readdir('./events', (err, files) => {
 })
 
 // Initiate the connection with Discord using the token located in the client's settings object.
-client.login(client.settings.token)
+client.login(process.env.BOT_TOKEN)
 
 // Catch and report discord.js errors.
 client.on('error', (err) => console.error(err))
