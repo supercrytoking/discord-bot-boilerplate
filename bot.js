@@ -5,9 +5,6 @@ const fs = require('fs')
 // Create a Discord.Client() instance.
 const client = new Discord.Client()
 
-// Load all settings from bot-settings.json into the client's settings object.
-client.settings = require('./config/bot-settings.json')
-
 // Load all commands into the client's commands object from the /commands/ folder.
 client.commands = {}
 fs.readdir('./commands', (err, files) => {
